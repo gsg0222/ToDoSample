@@ -38,7 +38,7 @@
 				<li th:each='i : ${#numbers.sequence(0, toDos.totalPages-1)}'
 					th:class="|page-item ${(toDos.number == i) ? 'active' : ''}|"
 					style="display: inline"><a class="page-link"
-					th:href="@{''(page=${i})}"> <span th:text='${i + 1}'>1</span>
+					th:href="@{''(page=${i})}" th:if="${i} >= 0"> <span th:text='${i + 1}'>1</span>
 				</a></li>
 				<li th:class="|page-item ${toDos.last ? 'disabled' : ''}|"><a
 					class="page-link" aria-label="Next"
